@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ララベル通信</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<button onClick=loginApi()>ログイン</button>
+
+    <script type="text/javascript">
+//        const request = {
+//            search: function () {
+//                console.log('ここまで通ってるv2')
+//                var defer = $.Deferred();
+//                $.ajax({
+//                    url: "http://192.168.33.51/insert",
+//                    dataType: 'jsonp',
+//                    success: defer.resolve,
+//                    error: defer.reject
+//                });
+//                return defer.promise();
+//            }
+//        }
+        function loginApi(){
+            console.log('ここまで通ってる')
+            $.ajax({
+                url     : "http://homestead.app/select",
+                type    : "GET",
+                async   : true,
+                data    : "aaa",
+                dataType: "json",
+                success : function(result) {
+                    //成功時の処理
+                    console.log(result)
+                    alert('id:'+result[0].id+'\nage:'+result[0].age)
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
